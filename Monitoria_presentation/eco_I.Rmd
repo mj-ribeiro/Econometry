@@ -1,0 +1,64 @@
+---
+title: "Econometria I"
+author: "Marcos J Ribeiro"
+date: "11/08/2020"
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme: structurebold
+    slide_level: 2
+    theme: AnnArbor
+  slidy_presentation: default
+institute: FEARP-USP
+fontsize: 10pt
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Porque utilizar o R?
+
+- Linguagem de programação voltada para estatística
+- Muitos usuários
+- APIs
+- [Rmarkdown](https://rmarkdown.rstudio.com/index.html) e integração com o \LaTeX
+- Rpubs
+- Bibliotecas (Neural Net, Nimble, rjags, Caret, ggplot2, rugarch...)
+- Integração com outras linguagens (Python, SQL, C++, HTML, Markdown...)
+- Grandes indústrias utilizam
+- Sua carreira está ameaçada se você não sabe programar
+
+## Como obter ajuda?
+
+- Tecla F1
+- ?comando
+- Stack Overflow
+- Rblogs
+- Livros, cursos 
+- [Rseek](https://rseek.org/)
+- [GitHub](https://github.com/) 
+
+##  
+
+
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Contato
+
+- [GitHub](https://github.com/mj-ribeiro)   
+- [Website](https://mj-ribeiro.github.io/)  
+- email: mjribeiro@usp.br
+
+
+
