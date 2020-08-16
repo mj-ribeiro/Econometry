@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Porque utilizar o R?
 
+- Os pilares da Econometria
 - Linguagem de programação voltada para estatística
 - Muitos usuários
 - APIs
@@ -36,23 +37,40 @@ knitr::opts_chunk$set(echo = FALSE)
 - ?comando
 - Stack Overflow
 - Rblogs
-- Livros, cursos 
+- [Livros](https://bookdown.org/ccolonescu/RPoE4/), cursos 
 - [Rseek](https://rseek.org/)
-- [GitHub](https://github.com/) 
-
-##  
+- [GitHub](https://github.com/mj-ribeiro/Econometry) 
 
 
+## Estrutura do curso
 
-```{r cars, echo = TRUE}
-summary(cars)
-```
+- print, cat
+- Variáveis
+- Operações
+- Vetores e matrizes (rbind, cbind)
+- rep, seq
+- Operações com matrizes e Fatiamento
+- Data frames
+- Como resolver o inconveniente e chato problema do Nan
+- Exercício 1: Regressão Linear
+- Booleanos
+- Condicionais (if, else, ifelse)
+- Loops (for, while)
+- Contadores e acumuladores
+- Exercício 2: Lei dos Grandes números
 
-## Slide with Plot
 
-```{r pressure}
-plot(pressure)
-```
+## Estrutura do curso
+
+- Exercício 3: Integral definida utilizando Método de Monte Carlo
+- Exercício 4: Simulando o lançamento de uma moeda
+- Exercício 5: Teorema de Gauss-Markov
+- Funções
+- plots
+- APIs
+- Rmarkdown
+
+
 
 ## Contato
 
