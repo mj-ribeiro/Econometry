@@ -3,12 +3,12 @@ title: "Econometria I"
 author: "Marcos J Ribeiro"
 date: "11/08/2020"
 output:
+  slidy_presentation: default
   beamer_presentation:
     colortheme: dolphin
     fonttheme: structurebold
     slide_level: 2
     theme: AnnArbor
-  slidy_presentation: default
 institute: FEARP-USP
 fontsize: 10pt
 urlcolor: blue
@@ -49,27 +49,45 @@ knitr::opts_chunk$set(echo = FALSE)
 - Operações
 - Vetores e matrizes (rbind, cbind)
 - rep, seq
-- Operações com matrizes e Fatiamento
+- Operações com matrizes  
 - Data frames
-- Como resolver o inconveniente e chato problema do Nan
-- Exercício 1: Regressão Linear
 - Booleanos
-- Condicionais (if, else, ifelse)
-- Loops (for, while)
-- Contadores e acumuladores
-- Exercício 2: Lei dos Grandes números
+- Fatiamento
+- Como resolver o inconveniente e chato problema do Nan
+
 
 
 ## Estrutura do curso
 
-- Exercício 3: Integral definida utilizando Método de Monte Carlo
-- Exercício 4: Simulando o lançamento de uma moeda
-- Exercício 5: Teorema de Gauss-Markov
+- Condicionais (if, else, ifelse)
+- Loops (for, while)
+- Contadores e acumuladores
 - Funções
 - plots
 - APIs
 - Rmarkdown
 
+
+## Estrutura do curso
+
+- Distribuições estatísticas
+- MQO
+- MQG
+- Testes estatísticos
+- Multicolinearidade
+- Autocorrelação
+- Heterocedasticidade
+- Especificação de modelo e teste de diagnóstico
+
+
+## Exercícios 
+
+- Exercício 1: Regressão Linear
+- Exercício 2: Lei dos Grandes números
+- Exercício 3: Integral definida utilizando Método de Monte Carlo
+- Exercício 4: Simulando o lançamento de uma moeda
+- Exercício 5: Teorema de Gauss-Markov
+- Exercício 6: Análise de dados
 
 
 ## Contato
