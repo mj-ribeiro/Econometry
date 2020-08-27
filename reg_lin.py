@@ -7,6 +7,9 @@ Created on Tue Aug 18 10:50:58 2020
 
 import numpy as np
 import scipy.optimize as sp
+import pandas as pd
+import statsmodels.formula.api as smf
+
 
 y = np.array((1, 2, 5, 6, 7, 8))
 x = np.array((3, 0, 9, 1, 11, 5))
@@ -15,22 +18,18 @@ x = np.array((3, 0, 9, 1, 11, 5))
 def obj(X):
     a = X[0] 
     b= X[1] 
-    epsilon = (y - a + b*x)**2
+    epsilon = (y - a - b*x)**2
     sum_epsilon = epsilon.sum()
     return sum_epsilon
 
 
-X = np.array((0.3, 0.4))
+X = np.array((0.3, 11))
 
 obj(X)
 
 X[1]
 
 sp.minimize(obj, X)
-
-import pandas as pd
-import statsmodels.api as sm
-import statsmodels.formula.api as smf
 
 
 df = pd.DataFrame(y, x)
