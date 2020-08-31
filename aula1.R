@@ -2,7 +2,7 @@
 # Monitoria de econometria - 1
 
 
-setwd('D:/Git projects/Econometry')
+setwd('D:/Git projects/Econometry')   # definir o diretório
 
 
 
@@ -57,6 +57,10 @@ tan(pi)
 x = 10 
 
 x
+
+
+
+
 
 
 
