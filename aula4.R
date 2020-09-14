@@ -94,6 +94,37 @@ plot(x, 1/x, type='l', main='1/x')
 
 
 
+# quartis
+
+
+vv = seq(1, 9, 1)
+
+summary(vv)
+
+
+
+# Dist
+
+
+
+set.seed(10)
+
+curve(dnorm(x), xlim = c(-5, 5))
+abline(v=0)
+text(-1, 0.1, '50%')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
