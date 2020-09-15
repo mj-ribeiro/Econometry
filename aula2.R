@@ -1,3 +1,5 @@
+# Monitoria de econometria  1
+# aula 2
 
 
 setwd('D:/Git projects/Econometry')   # definir o diretório
