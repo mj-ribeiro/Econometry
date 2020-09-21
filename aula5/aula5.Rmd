@@ -62,13 +62,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Teste de Hipóteses
 
-$$
-  H0: \beta_2 = 0 
-$$
+- Suponha que queremos testar se $\beta_2 = 0$, temos então que:
 
-$$
-  H1: \beta_2 \neq 0
-$$
+$$H0: \beta_2 = 0$$
+$$H1: \beta_2 \neq 0$$
+
+- Temos então que:
+
+\begin{equation}
+  Pr \left[-t_{\alpha/2} \leq \frac{\hat{\beta}_2 - \beta_2}{ep(\hat{\beta}_2)} \leq t_{\alpha/2} \right] = 1 - \alpha
+\end{equation}
 
 - O Teste t é dado por:
 

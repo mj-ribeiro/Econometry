@@ -1,4 +1,3 @@
-
 # Monitoria de econometria  1
 # aula 1
 
