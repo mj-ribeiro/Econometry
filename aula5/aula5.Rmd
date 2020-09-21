@@ -1,0 +1,114 @@
+---
+title: "Econometria em R - Aula 5"
+author: "Marcos J Ribeiro"
+date: "21/09/2020"
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fonttheme: structurebold
+    slide_level: 2
+    theme: AnnArbor
+institute: FEARP-USP
+fontsize: 10pt
+urlcolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## MQO
+
+- Vamos minimizar a seguinte equação:
+
+\begin{equation}
+  \sum \epsilon_i^2 = \sum(Y_i - \hat{Y_i})^2
+\end{equation}
+
+- Onde 
+
+\begin{equation}
+  \hat{Y_i} = \hat{\beta_1} + \hat{\beta_2}X_i 
+\end{equation}
+
+- Para isso vou utilizar a biblioteca optimx do R. Poderíamos utilizar a função lm, mas assim ficaria muito fácil e nada didático. 
+
+
+## Variância dos estimadores
+- O erro padrão da regressão representa os desvios de $Y$ em relação ao $Y$ estimado e
+é dado por:
+\begin{equation}
+  \sigma = \sqrt{\frac{\sum \epsilon_i^2}{n - 2} }
+\end{equation}
+
+- As variâncias dos estimadores são:
+\begin{equation}
+  var(\hat{\beta}_2) = \frac{\sigma^2}{\sum x_i^2}
+\end{equation}
+
+\begin{equation}
+  ep(\hat{\beta}_2) = \frac{\sigma}{\sqrt{\sum x_i^2}}
+\end{equation}
+
+\begin{equation}
+  var(\beta_1) = \sigma^2 \frac{\sum X_i^2}{n\sum x_i^2}
+\end{equation}
+
+\begin{equation}
+  ep(\beta_1) = \sigma \sqrt{\frac{\sum X_i^2}{n\sum x_i^2} } 
+\end{equation}
+
+
+## Teste de Hipóteses
+
+$$
+  H0: \beta_2 = 0 
+$$
+
+$$
+  H1: \beta_2 \neq 0
+$$
+
+- O Teste t é dado por:
+
+\begin{equation}
+  t = \frac{\hat{\beta}_2 - \beta_2 }{ep(\beta_2)}
+\end{equation}
+
+
+## Intevalo de confiança 
+
+- Os intervalos de confiança para $\beta_1$ e $\beta_2$ são: 
+
+\begin{equation}
+  \hat{\beta}_1 \pm t_{\alpha/2}ep(\hat{\beta}_1)
+\end{equation}
+
+
+\begin{equation}
+  \hat{\beta}_2 \pm t_{\alpha/2}ep(\hat{\beta}_2)
+\end{equation}
+
+
+## $R^2$ 
+
+\begin{equation}
+  SQR = \sum (Y_i - \hat{Y_i})^2 
+\end{equation}
+
+
+\begin{equation}
+  SQE = \sum (\hat{Y}_i - \bar{Y})^2
+\end{equation}
+
+\begin{equation}
+  SQT = \sum (Y_i - \bar{Y})^2 = SQR + SQE 
+\end{equation}
+
+\begin{equation}
+  R^2 = \frac{SQE}{SQT} = 1 - \frac{SQR}{SQT}
+\end{equation}
+
+
+
