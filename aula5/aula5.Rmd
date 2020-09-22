@@ -80,7 +80,7 @@ $$H1: \beta_2 \neq 0$$
 \end{equation}
 
 
-## Intevalo de confiança 
+## Intervalo de confiança 
 
 - Os intervalos de confiança para $\beta_1$ e $\beta_2$ são: 
 
