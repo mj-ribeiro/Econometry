@@ -145,11 +145,12 @@ df = wb(indicator = 'BX.KLT.DINV.WD.GD.ZS', startdate = 2000, enddate = 2016)
 
 library(quantmod)
 
+## Ibovespa
 
 ibov = getSymbols('^BVSP', src = 'yahoo',
                   from = '1999-01-01',
                   to = '2020-05-01',
-                  periodicity= 'monthly',
+                 # periodicity= 'monthly',
                   auto.assign = F)[,4]
 
 
@@ -160,7 +161,18 @@ summary(ibov)
 
 plot(ibov)
 
+ibov = data.frame(ibov)
 
+
+## Gráfico usando o loop - muuuuuuuiito legal
+
+windows()
+for(i in 1:length(ibov$ibov)){
+  plot(ibov[1:i,], col='blue', pch=19)
+}
+
+
+## Banco do Brasil
 
 
 bb = getSymbols('BBAS3.SA', src = 'yahoo',
