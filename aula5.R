@@ -246,6 +246,8 @@ SQT = sum( (y - mean(y))^2 )   # SQR + SQE
 
 
 
+anova(reg)
+
 # 2 (h)
 
 r_2 = SQE/SQT
