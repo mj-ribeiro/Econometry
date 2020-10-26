@@ -114,4 +114,14 @@ $$H1: \beta_2 \neq 0$$
 \end{equation}
 
 
+## Critérios de informação de Akaike e Schwartz
+
+\begin{equation}
+ AIC = \frac{2k}{n} + \ln \left( \frac{SQR}{n} \right)
+\end{equation}
+
+
+\begin{equation}
+ BIC = \frac{k}{n} \ln (n) + \ln \left( \frac{SQR}{n} \right)
+\end{equation}
 
