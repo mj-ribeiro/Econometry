@@ -1,20 +1,20 @@
 # Monitoria de econometria - 1
 # aula 12
 
-setwd('D:/Git projects/Econometry')   # definir o diretório
+setwd('D:/Git projects/Econometry')   # definir o diret?rio
 
 
 
-# UF	Unidade da Federação
+# UF	Unidade da Federa??o
 # V2007	Sexo
-# V2009	Idade do morador na data de referência
-# V2010	Cor ou raça
-# V3007	Já concluiu algum outro curso de graduação?
-# VD3001	Nível de instrução mais elevado alcançado (pessoas de 5 anos ou mais de idade)
-# VD4001	Condição em relação à força de trabalho na semana de referência para pessoas de 14 anos ou mais de idade
-# VD4002	Condição de ocupação na semana de referência para pessoas de 14 anos ou mais de idade
+# V2009	Idade do morador na data de refer?ncia
+# V2010	Cor ou ra?a
+# V3007	J? concluiu algum outro curso de gradua??o?
+# VD3001	N?vel de instru??o mais elevado alcan?ado (pessoas de 5 anos ou mais de idade)
+# VD4001	Condi??o em rela??o ? for?a de trabalho na semana de refer?ncia para pessoas de 14 anos ou mais de idade
+# VD4002	Condi??o de ocupa??o na semana de refer?ncia para pessoas de 14 anos ou mais de idade
 # VD4020	Rendimento mensal efetivo de todos os trabalhos para pessoas de 14 anos ou mais de idade (apenas para pessoas que receberam em dinheiro, produtos ou mercadorias em qualquer trabalho)
-# VD4035	Horas efetivamente trabalhadas na semana de referência em todos os trabalhos para pessoas de 14 anos ou mais de idade
+# VD4035	Horas efetivamente trabalhadas na semana de refer?ncia em todos os trabalhos para pessoas de 14 anos ou mais de idade
 
 
 
@@ -25,12 +25,14 @@ library(PNADcIBGE)
 
 vars = c('UF', 'V2007', 'V2009', 'V2010', 'V3007',
          'VD3001', 'VD4001', 'VD4002', 'VD4020',
-         'VD4035')
+         'VD4035', 'V3003A')
 
 
-dados = get_pnadc(year=2020, quarter = 1, vars = vars)
 
-dados = dados[['variables']]
+dados_pnad = get_pnadc(year=2020, quarter = 1,  vars = vars)
+
+dados = dados_pnad[['variables']]
+
 
 
 
@@ -58,14 +60,14 @@ table(dados$V2007)
 prop.table(table(dados$V2007))
 
 
-## raça
+## raca
 
 table(dados$V2010)
 prop.table(table(dados$V2010))*100
 
 
 
-## raça e gênero
+## raca e genero
 
 
 table(dados$V2007,dados$V2010 )
@@ -73,7 +75,7 @@ prop.table(table(dados$V2007,dados$V2010 ))*100
 
 
 
-## diferença salarial por gênero
+## diferenca salarial por genero
 
 
 mean(dados[dados$V2007=='Mulher', 'VD4020'], na.rm = T)
@@ -81,18 +83,18 @@ mean(dados[dados$V2007=='Mulher', 'VD4020'], na.rm = T)
 mean(dados[dados$V2007=='Homem', 'VD4020'], na.rm = T)
 
 
-## diferença salarial por raça
+## diferenca salarial por raca
 
 mean(dados[dados$V2010=='Branca', 'VD4020'], na.rm = T)
 
 mean(dados[dados$V2010=='Parda', 'VD4020'], na.rm = T)
 
-mean(dados[dados$V2010=='Indígena', 'VD4020'], na.rm = T)
+mean(dados[dados$V2010=='Ind?gena', 'VD4020'], na.rm = T)
 
 mean(dados[dados$V2010=='Preta', 'VD4020'], na.rm = T)
 
 
-## diferença salarial por gênero e  raça
+## diferenca salarial por genero e  raca
 
 
 mean(dados[dados$V2010=='Branca' & dados$V2007=='Mulher', 'VD4020'], na.rm = T)
@@ -103,14 +105,119 @@ mean(dados[dados$V2010=='Parda' & dados$V2007=='Homem', 'VD4020'], na.rm = T)
 
 
 
-## tx de desocupação
+## tx de desocupacao
 
 des = ifelse(dados$VD4002=='Pessoas desocupadas', 1, 0)
 
-ocup = ifelse(dados$VD4001=='Pessoas na força de trabalho', 1, 0)
+ocup = ifelse(dados$VD4001=='Pessoas na forÃ§a de trabalho', 1, 0)
 
 
 tx_des = sum(des, na.rm = T)/sum(ocup, na.rm = T)
+
+
+
+## renda por estado
+
+fat = factor(dados$UF)
+
+r_uf = by(dados$VD4020, fat, mean, na.rm=T)
+
+
+by(dados$VD4020, fat, summary)
+
+
+
+r_uf[order(r_uf, decreasing = T) ]
+
+
+
+
+
+## escolaridade
+
+table(dados$V3003A)
+
+prop.table(table(dados$V3003A))
+
+
+fat2 = factor(dados$V3003A)
+
+
+r_esc = by(dados$VD4020, fat2, mean, na.rm=T)
+
+r_esc[order(r_uf, decreasing = T) ]
+
+
+
+by(dados$VD4020, fat2, summary)
+
+
+
+
+# plots 
+
+hist(dados$VD4035, main = "Histograma",
+        xlab = "Numero de Horas Trabalhadas")
+
+
+
+## regressÃ£o:  renda idade raca
+
+
+reg = lm(VD4020 ~  V2010 + V2009, data = dados)
+summary(reg)
+
+
+
+# Gini 
+
+
+library(survey)
+library('convey')
+
+
+dados_pnad = convey_prep(dados_pnad)
+
+
+giniHab =  svygini(~VD4020, dados_pnad, na.rm  =  TRUE)
+giniHab
+
+
+
+# gini por estado
+
+
+giniUF = svyby(~VD4020, by = ~UF, dados_pnad, svygini, na.rm  =  TRUE)
+
+pos2= order(giniUF[,2], decreasing = T)
+
+giniUF[pos2, ]
+
+
+
+# curva de Lorenz
+
+lorenz =  svylorenz(~VD4020, dados_pnad, quantiles = seq(0, 1, .05), na.rm  =  TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
