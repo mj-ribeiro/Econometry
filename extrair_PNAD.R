@@ -7,6 +7,7 @@ setwd("D:/pnad2015/Dados")  # definir diretório de trabalho
 #https://www.ibge.gov.br/estatisticas/sociais/populacao/9127-pesquisa-nacional-por-amostra-de-domicilios.html?=&t=downloads
 
 
+
 # aqui utilizo a de 2015
 
 

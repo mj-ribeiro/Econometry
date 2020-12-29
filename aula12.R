@@ -5,16 +5,16 @@ setwd('D:/Git projects/Econometry')   # definir o diret?rio
 
 
 
-# UF	Unidade da Federa??o
+# UF	Unidade da Federacao
 # V2007	Sexo
-# V2009	Idade do morador na data de refer?ncia
-# V2010	Cor ou ra?a
-# V3007	J? concluiu algum outro curso de gradua??o?
-# VD3001	N?vel de instru??o mais elevado alcan?ado (pessoas de 5 anos ou mais de idade)
-# VD4001	Condi??o em rela??o ? for?a de trabalho na semana de refer?ncia para pessoas de 14 anos ou mais de idade
-# VD4002	Condi??o de ocupa??o na semana de refer?ncia para pessoas de 14 anos ou mais de idade
+# V2009	Idade do morador na data de referencia
+# V2010	Cor ou raca
+# V3007	Ja concluiu algum outro curso de gradua??o?
+# VD3001	Nivel de instrucao mais elevado alcancado (pessoas de 5 anos ou mais de idade)
+# VD4001	Condicao em relacao a forca de trabalho na semana de referencia para pessoas de 14 anos ou mais de idade
+# VD4002	Condicao de ocupacao na semana de referencia para pessoas de 14 anos ou mais de idade
 # VD4020	Rendimento mensal efetivo de todos os trabalhos para pessoas de 14 anos ou mais de idade (apenas para pessoas que receberam em dinheiro, produtos ou mercadorias em qualquer trabalho)
-# VD4035	Horas efetivamente trabalhadas na semana de refer?ncia em todos os trabalhos para pessoas de 14 anos ou mais de idade
+# VD4035	Horas efetivamente trabalhadas na semana de referencia em todos os trabalhos para pessoas de 14 anos ou mais de idade
 
 
 
