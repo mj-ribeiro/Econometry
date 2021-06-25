@@ -47,5 +47,25 @@ microbenchmark::microbenchmark(soma_r(vec), soma_c(vec))
 
 
 
+cppFunction(
+  "int pr() {
+    for (int i=0; i<5; i++) {
+      std::cout<<i<< std::endl;
+}}")
+
+
+pr()
+
+
+
+
+cppFunction(
+  "int adicao_c(int x, int y, int z) {
+    int sum = x + y + z;
+    return sum;
+  }")
+
+
+
 
 
