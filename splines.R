@@ -59,7 +59,7 @@ summary(lm5)
 
 x = seq(min(df$Age), max(df$Age), length=100)
 
-y_hat = predict(lm5, newdata = data.frame(Age= x), interval = 'confidence')
+y_hat = predict(lm5, newdata = data.frame(Age = x), interval = 'confidence')
 
 plot(GAG~Age, df_treino, pch=19, col='red3')
 lines(x, y_hat[,1], col='seagreen', lwd=2)
@@ -106,7 +106,7 @@ knot = c(4.42, 8.84, 13.3)
 
 x_k1 = df$Age - knot[1]
 x_k1[x_k1<0] = 0
-
+  
 x_k2 = df$Age - knot[2]
 x_k2[x_k2<0] = 0
 
@@ -215,16 +215,6 @@ res_t = data.frame(
 
 
 res_t
-
-
-
-
-
-
-
-
-
-
 
 
 
